@@ -1,0 +1,8 @@
+form {
+    display: flex;
+    gap: 5%;
+}
+
+form input {
+    padding: 5px 10px;
+}
