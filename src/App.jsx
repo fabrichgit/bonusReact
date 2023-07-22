@@ -11,8 +11,8 @@ function App() {
 
   function handleSubmit(event) {
     event.preventDefault()
-    let newSubjectList = [...Subjects, { id: new Date().getTime(), name: value }]
-    setSubjects(newSubjectList)
+    let newSubjectList = [...Subjects, { id: new Date().getTime(), name: value }];
+    setSubjects(newSubjectList);
   }
 
   const handleUpdate = (item) => {
@@ -24,7 +24,6 @@ function App() {
   //render
   return (
     <div id='apk-container'>
-      <input type="text" value={toUpdate?.name} />
       <ListSubjects Subjects={Subjects} setSubjects={setSubjects} handleUpdate={handleUpdate} />
       <Form setValue={setValue} handleSubmit={handleSubmit} buttonLabel={"check"} />
     </div>
