@@ -1,7 +1,6 @@
-import { useState } from "react";
+function ListSubjects({ Subjects, setSubjects, handleShowPopUp }) {
 
-function ListSubjects({ Subjects, setSubjects, handleUpdate }) {
-
+    let count = 1;
 
     //behaving
     const handleDelete = (id) => {
@@ -20,21 +19,43 @@ function ListSubjects({ Subjects, setSubjects, handleUpdate }) {
 
     //render
     return (
-        <div id='container-list'>
-            {Subjects.map((subject) => {
-                return (
-                    <div key={subject.id}>
-                        <div>{subject.name}</div>
-                        <div>
-                            <span></span> %
-                        </div>
-                        <button onClick={() => handleDelete(subject.id)}>delete</button>
-                        <button onClick={() => handleUpdate(subject)}>Update</button>
-                    </div>
-                )
-            })}
+        <div className="container-table">
+
+            <table>
+                <thead id="head-table" style={{ backgroundColor: 'rgb(130, 122, 122)' }}>
+                    <tr>
+                        <th>Title</th>
+                        <th>Description</th>
+                        <th>Dead-line</th>
+                        <th>Delete</th>
+                        <th>Update</th>
+                    </tr>
+                </thead>
+                <tbody id='container-list'>
+                    {
+                        Subjects.map((subject) => {
+                            return (
+                                <tr key={subject.id}>
+                                    <td>{subject.title}</td>
+                                    <td>{subject.description}</td>
+                                    <td>{subject.deadline}</td>
+                                    <td onClick={() => handleDelete(subject.id)} style={{ cursor: "pointer" }}>
+                                        <img src="../../public/message-square-x-solid-24.png" alt="" />
+                                    </td>
+                                    <td onClick={() => handleShowPopUp(subject)} style={{ cursor: "pointer" }}>
+                                        <img src="../../../public/edit-alt-solid-24.png" alt="" />
+                                    </td>
+                                </tr>
+                            )
+                        })
+                    }
+                </tbody>
+                <tr id="foot" /*style="visibility: hidden; border: none;"*/></tr>
+            </table>
+
         </div>
     )
+
 }
 
 export default ListSubjects;

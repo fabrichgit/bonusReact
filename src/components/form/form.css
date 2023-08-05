@@ -1,8 +1,46 @@
-form {
+/*form {
     display: flex;
     gap: 5%;
 }
 
 form input {
     padding: 5px 10px;
+}*/
+
+
+
+
+
+
+
+
+
+
+
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3vh;
+    padding: 3%;
+    background: linear-gradient(to top, rgb(54, 51, 32), rgb(159, 149, 95));
+    border-radius: 30px;
+    box-shadow: 3px 3px 6px grey;
+}
+
+.form input {
+    border-radius: 20px;
+    padding: 5% 16%;
+    font-weight: bold;
+    text-align: center;
+}
+
+.form h2 {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+    font-size: large;
+    color: whitesmoke;
 }

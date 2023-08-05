@@ -1,39 +1,20 @@
-import { useState } from "react";
-
-function Form({ setValue, handleSubmit, buttonLabel }) {
-    //state
-
-
-
-    //behaving
-    /*const handleSubmit = (event) => {
-        event.preventDefault();
-
-        const SubjectsStateCopy = [...Subjects];
-
-        const id = new Date().getTime();
-        const name = value;
-        SubjectsStateCopy = [...Subjects, { id, name }];
-
-        setSubjects(SubjectsStateCopy);
-
-        setValue("");
-    };
-
-
-    const handleChange = (event) => {
-        setValue(event.target.value);
-    }*/
-
-
+function Form({ setDescription, setTitle, setDeadline, deadline, title, description, handleAdd, buttonLabel }) {
 
     //render
     return (
         <>
-            <form action="submit">
-                <input type="text" placeholder="Enter name" onChange={(e) => setValue(e.target.value)} />
-                <input type="submit" value={buttonLabel} onClick={handleSubmit} />
+
+            <form action="submit" className="form">
+                <h2>To-do list</h2>
+                <input type="text" placeholder="Title..." onChange={(e) => setTitle(e.target.value)} value={title} required />
+                <input type="text" placeholder="Description..." onChange={(e) => setDescription(e.target.value)} value={description} required />
+                <label htmlFor=""><h4>Dead-line</h4></label>
+                <input type="date" onChange={(e) => setDeadline(e.target.value)} value={deadline} required />
+                <a href="#foot">
+                    <input type="submit" value={buttonLabel} onClick={handleAdd} />
+                </a>
             </form>
+
         </>
     )
 }

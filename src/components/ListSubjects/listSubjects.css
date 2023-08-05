@@ -1,17 +1,47 @@
-#container-list {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 4%;
-    border: solid 1px red;
-    min-height: 20vh;
+#head-table {
+    position: sticky;
+    top: 0;
+    background-color: #b3b3b3;
+    height: max-content;
+    z-index: 2;
 }
 
-#container-list>div {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    border: solid 1px blue;
+.container-table {
+    width: 800px;
+    height: 50vh;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+.container-table::-webkit-scrollbar {
+    width: 10px;
+}
+
+.container-table::-webkit-scrollbar-thumb {
+    background: linear-gradient(rgb(151, 147, 147), rgb(66, 64, 64), rgb(151, 147, 147), rgb(151, 147, 147));
+    border-radius: 20px;
+    border: solid 1px white;
+}
+
+.container-table::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+
+table {
+    width: 800px;
+    border-collapse: collapse;
+}
+
+tbody {
+    min-height: 50%;
+}
+
+tr,
+th,
+td {
+    border: 1px solid #dddddd;
+    padding-block: 1.5%;
+    text-align: center;
+    font-size: large;
 }
